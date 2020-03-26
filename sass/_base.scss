@@ -33,34 +33,56 @@ Grey dark 3: #999
 
 }
 
+
+$break-point-largest : 75em ; // 1200px
+$break-point-large : 68.75em ; // 1100px
+
+$break-point-med : 56.25em; // 900px
+
+$break-point-small :37.5em ;
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
 *,
-*::after,
-*::before {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 html {
-  font-size: 62.5%;
   box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+
+  @media only screen and (max-width: $break-point-large) {
+      font-size: 50%;
+  }
 }
 
 body {
-  font-family: "Open Sans";
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   line-height: 1.6;
-  color: #000;
-  background-image: linear-gradient(to right bottom , var(--color-primary-light) , var(--color-primary-dark));
-
+  color: var(--color-grey-dark-2);
+  background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
   background-size: cover;
-  min-height: 100vh;
   background-repeat: no-repeat;
+
+  min-height: 100vh;
 }
 
 ul {
   list-style: none;
-}
+};
+
+
+
